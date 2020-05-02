@@ -1,14 +1,24 @@
 #!/usr/bin/env bash
 function count(){
-  ls -a| wc -l
+  ls -l| grep "^-" | wc -l
 }
 
 file=$(count)
-
+echo $file
 function main(){
-  echo "How many files are in the current directory?"
-  echo "Enter your guess, please: "
-  read input
+  while true
+  do
+    echo "How many files are in the current directory?"
+    echo "Enter your guess, please: "
+    read input
+    if [[ $input =~ [^0-9] ]]
+    then
+        echo "It's not an Integer"
+      else
+        break;
+    fi
+  done
+
   while [[ $input -ne $file ]]
   do
     if [[ $input -gt $file ]]
@@ -23,6 +33,7 @@ function main(){
       read input
     fi
   done
+
   if [[ $input -eq $file ]]
   then
     echo "Good job, you're done."
