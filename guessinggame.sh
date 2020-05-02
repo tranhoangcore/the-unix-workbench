@@ -13,30 +13,18 @@ function main(){
     if [[ $input =~ [^0-9] ]]
     then
         echo "It's not an Integer"
-      else
-        break;
-    fi
-  done
-
-  while [[ $input -ne $file ]]
-  do
-    if [[ $input -gt $file ]]
-    then
-      echo "No, It's high."
-      echo "Enter again, please: "
-      read input
+    elif [[ $input -gt $file ]]
+      then
+        echo "No, It's high."
     elif [[ $input -lt $file ]]
-    then
-      echo "No, It's small."
-      echo "Enter again, please: "
-      read input
+      then
+        echo "No, It's small."
+    elif [[ $input -eq $file ]]
+      then
+        echo "Good job, you're done."
+        break
     fi
   done
-
-  if [[ $input -eq $file ]]
-  then
-    echo "Good job, you're done."
-  fi
 }
 
 main
