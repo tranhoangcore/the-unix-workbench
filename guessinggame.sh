@@ -4,7 +4,6 @@ function count(){
 }
 
 file=$(count)
-echo $file
 function main(){
   while true
   do
