@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 function count(){
-  ls -l| grep "^-" | wc -l
+  ls -1A |  wc -l
 }
 
 file=$(count)
