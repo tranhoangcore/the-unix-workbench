@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 function count(){
-  ls | wc -l
+  ls -a| wc -l
 }
 
 file=$(count)
@@ -13,12 +13,12 @@ function main(){
   do
     if [[ $input -gt $file ]]
     then
-      echo "No, It's very high."
+      echo "No, It's high."
       echo "Enter again, please: "
       read input
     elif [[ $input -lt $file ]]
     then
-      echo "No, It's very small."
+      echo "No, It's small."
       echo "Enter again, please: "
       read input
     fi
